@@ -1,38 +1,79 @@
-.App {
+/* App.css */
+
+/* עיצוב כללי לדף */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f7f9fc;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* כותרת הדף */
+.title {
   text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #4A90E2;
+  margin-bottom: 50px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* הקונטיינר שמרכז את הפרסומות במרכז הדף */
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 עמודות */
+  grid-template-rows: repeat(2, 1fr);    /* 2 שורות */
+  gap: 30px;
+  width: 80%;
+  height: 60%;
+  justify-items: center;
+  align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* עיצוב כפתור פרסומת */
+.advertise {
+  background-color: #007bff;
+  border: 2px solid #0056b3;
+  border-radius: 15px;
+  padding: 40px;
+  width: 240px;
+  height: 240px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.advertise:hover {
+  background-color: #0056b3;
+  border-color: #003f7f;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* עיצוב תמונה / אייקון בתוך הכפתור */
+.advertise:before {
+  content: "";
+  display: block;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/46/Blue_image_icon.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 15px;
+}
+
+/* טקסט בתוך הכפתור */
+.advertise-text {
+  direction: rtl;
+  font-size: 1.5rem;
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  font-weight: bold;
+  margin-top: 10px;
 }
